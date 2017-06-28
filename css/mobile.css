@@ -1,0 +1,83 @@
+.container{  /*Ocupar quase toda a tela (deixando apenas uma pequena margem)*/
+	width:96%;
+}
+
+header h1{ /*Centralizar o logo na página*/
+	text-align:center;
+}
+header h1 img{
+	max-width:50%;
+}
+.sacola{ /*Esconder as informações (secundárias) sobre a sacola */
+	display:none;
+}
+.menu-opcoes{ /*Ajustar o menu para ficar abaixo do logo*/
+	position: static;
+	text-align:center;
+}
+.menu-opcoes ul li{ /*Aumentar o espaço entre os links*/
+	display:inline-block;
+	margin:5px;
+}
+
+.busca,
+.menu-departamento,
+.destaque img{  /*Ocupar 100% da tela com o menu e a busca*/
+	margin-right: 0;
+	width:100%;
+}
+
+/*Manter o painel com 3 elementos por linha, mas fazendo os dois painéis encaixarem um em cima do outro*/
+.painel{
+	width: auto;
+}
+.painel li{
+	width:30%;
+}
+.painel img{
+	width:100%;
+}
+
+/*Usar 2 colunas no menu quando chegar em 480px(um iPhone em paisagem)*/
+@media(min-width:480px){
+	header h1{
+		margin: 5px 0;
+	}
+	.menu-departamento{
+		padding-bottom:10px;
+		margin-bottom:10px;
+	}
+	.menu-departamento nav>ul{
+		-webkit-column-count:2;
+		-moz-column-count:2;
+		column-count:2;
+	}
+}
+
+/*Em tela um pouco maiores, como tablets(Um iPad tem 768px por exemplo)*/
+@media(min-width:720px){
+	header h1{
+		text-align:left;
+	}
+	.menu-opcoes{
+		position:absolute;
+	}
+	.sacola{
+		display:block;
+	}
+	.painel li{
+		width:15%;
+	}
+	.busca, .menu-departamento{
+		margin-right: 1%;
+		width: 30%;
+	}
+	.menu-departamento nav>ul{
+		-webkit-column-count:1;
+		-moz-column-count:1;
+		column-count:1;
+	}
+	.destaque img{
+		width:69%;
+	}
+}

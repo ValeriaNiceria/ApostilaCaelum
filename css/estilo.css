@@ -1,0 +1,279 @@
+header{
+    position:relative;
+}
+
+.sacola{
+    background: url(../img/sacola.png) no-repeat top right;
+    font-size:14px;
+    padding-right:35px;
+    padding-top:8px;
+    text-align:right;
+    width:140px;
+    position:absolute;
+    top: 0;
+    right: 0;
+}
+
+.container{
+    margin:0 auto;
+    width:940px;
+}
+
+.destaque{
+    margin-top: 20px;
+}
+
+
+.busca input{
+    vertical-align:middle;
+}
+
+.busca input[type=search]{
+    width:170px;
+}
+
+.busca,
+.menu-departamento{
+    background-color: #dcdcdc;
+    font-weight:bold;
+    text-transform:uppercase;
+
+    margin-right:10px;
+    width:230px;
+
+    float:left;
+}
+
+.busca h2,
+.busca form,
+.menu-departamento h2{
+    margin:10px;
+}
+
+.menu-departamento{
+    clear:left;
+    text-transform:uppercase;
+
+    margin-top: 10px;
+    padding-bottom:10px;
+}
+
+.menu-departamento li{
+    background-color:white;
+    margin-bottom:1px;
+    padding:5px 10px;
+}
+
+.menu-departamento li ul{ /*Sublista esteja escondida*/
+    display:none; /*retira o elemento do layout da página*/
+}
+
+.menu-departamento li:hover ul{ /*Quando o usuário passar o mouse*/
+    display:block; /*Faz com que o elemento html seja rederizado como um bloco*/
+}
+
+.menu-departamento ul ul li{
+    background-color:#dcdcdc;
+}
+
+.menu-departamento li li a:before{ /*Enjetar um conteúdo novo via propriedade content no CSS*/
+    content: '- '; /*Serve para indicar qual conteúdo dinamico que será  inserido*/
+}
+
+/*
+[A propriedade content tem muitas variações.
+ Uma variação simples, mas útil, é usar caracteres unicode para injetar símbolos mais interessantes.]
+
+.menu-departamento li li a:before{
+    content: '\272A';
+    padding-right: 3px;
+}
+
+.painel h2: before{
+    content: '\2756';
+    padding-right: 5px;
+    opacity: 0.4;
+}
+
+*/
+
+.menu-departamento a{
+    color: #333333;
+    text-decoration:none;
+}
+
+.menu-opcoes{
+    position:absolute;
+    bottom:0;
+    right:0;
+}
+
+.menu-opcoes ul{
+    font-size:15px;
+}
+
+.menu-opcoes ul li{
+    display: inline;
+    margin-left:20px;
+}
+
+.menu-opcoes a{
+    color:#036;
+}
+
+.menu-opcoes a:hover{ /*Quando o usuário passar o mouse*/
+    color:#007dc6;
+}
+
+.menu-opcoes a:action{ /*Quando clicar no item*/
+    color:#867dc6;
+}
+
+body{
+    font-family: "arial","helvetica",sans-serif;
+    color: #333333;
+}
+
+
+.painel{
+    margin:10px 0;
+    width:450px;
+
+    border-radius:4px; /* Permite definir as bordas arredondadas*/
+    box-shadow:1px 1px 4px  #999; /*Coloca sombra no elemento*/
+
+    box-shadow:inset 1px 1px 4px #999; /*Adiciona sombra interna com elemento com o (inset)*/
+}
+
+
+
+.painel ol{
+    margin-left:-35px;
+}
+
+.painel li{
+    display:inline-block;
+    vertical-align: top;
+    width:140px;
+    margin:2px;
+    padding-bottom:10px;
+
+    transition:0.7s ease-in; /*Animação na volta do elemento para o estado normal*/
+}
+
+
+/*Quando o usuário passar  o mouse em algum produto dos painéis de destaque, mostre uma sombra por trás com box-shadow.*/
+.painel li:hover{
+    background-color: rgba(255,255,255,0.8);
+    box-shadow:0 0 5px #333;
+    transition: box-shadow 0.7s;
+
+    /*Quando passar o mouse em cima do elemento, aumentar o elemento em 20%, dando uma espécie de zoom*/
+    transform:scale(1.2) rotate(-5deg);
+}
+
+/*Faz os elementos ímpares girarem em sentido anti-horário e os pares no sentido horário*/
+.painel li:nth-child(2n):hover{
+    transform:scale(1.2) rotate(5deg);
+}
+
+.painel h2{
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    margin-bottom:10px;
+
+    text-shadow:3px 3px 2px rgba(255,255,255,0.1); /*Adiciona sombra ao texto com o canal alfa (rgba)*/
+
+}
+
+.painel h2:before{ /*Adiciona o conteúdo visual*/
+    content: '\2756';
+    padding-right: 5px;
+    opacity: 0.4;
+}
+
+.painel a{
+    color:#333;
+    font-size:13px;
+    text-align:center;
+    text-decoration:none;
+}
+
+.painel figcaption{
+    width:120px;
+}
+
+.novidades{
+    background-color:#f5dcdc;
+
+    background:linear-gradient(#f5dcdc, #bebef4); /*Adiciona gradiente*/
+
+    float:left;
+}
+
+.mais-vendidos{
+    background-color:#dcdcf5;
+
+    background:linear-gradient(#dcdcf5, #f4bebe); /*Adiciona gradiente*/
+
+    float:right;
+}
+
+#rodape{
+    color:#777;
+    text-align: center;
+}
+
+footer{
+    clear:both;
+    position:relative;
+    background-image: url(../img/fundo-rodape.png);
+
+    padding:25px 0;
+}
+
+footer .container{
+    position: relative;
+}
+
+img[alt="[Logo Mirror Fashion]"]{
+    margin-left:30px;
+    margin-top:5px;
+}
+
+.social{
+    float:right;
+    margin-top:9px;
+    margin-right:40px;
+}
+
+.social li{
+    float:left;
+    margin-left:20px;
+}
+
+
+.social a{
+    /*Tamanho do elemento = imagem*/
+    height:30px;
+    width:32px;
+    /*imagem replace*/
+    display:block;
+    /*Retirando o texto da frente*/
+    text-indent:-9999px;
+}
+
+.facebook{
+    /*Imagem com fundo*/
+    background-image: url(../img/facebook.png);
+}
+
+.twitter{
+    background-image: url(../img/twitter.png);
+}
+
+.google{
+    background-image: url(../img/googleplus.png);
+}

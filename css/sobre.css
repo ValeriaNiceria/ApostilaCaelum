@@ -1,0 +1,184 @@
+.container{
+    margin:0 auto;
+    width:940px;
+}
+
+body{
+    font-family: "arial","helvetica",sans-serif;
+    color: #333333;
+    margin-left:auto;
+    margin-right:auto;
+    width:940px;
+}
+
+header{
+    position:relative;
+}
+
+article{
+    line-height: 25px; /*Tamanho da altura de cada linha*/
+    letter-spacing: 3px; /*Tamanho do espaço entre cada letra*/
+    word-spacing: 5px; /*Tamanho do espaço entre cada palavra*/
+
+}
+
+#titulo{
+    background-image: url(../img/sobre-background.jpg);
+    padding:10px;
+    margin-top:10px;
+}
+
+h2{
+    border-bottom: 2px solid #333333;
+    margin-top:30px;
+}
+
+p{
+    padding:0 45px;
+    text-indent:15px;
+}
+
+p:first-letter{ /*Primeira letra do parágrafo fica em negrito*/
+    font-weight:bold;
+}
+
+/*
+[Alterar a primeira linha do texto]
+p:first-line{
+font-variant:small-caps;
+}
+*/
+
+:not(p) + p:first-line{ /*Selecione as primeiras linhas dos parágrafos que não são precedidos por  outros parágrafos*/
+    font-variant: small-caps;
+}
+
+h1 + p{ /*Utilizando o seletor de irmão adjacente - Remover apenas a identação do primeiro parágrafo*/
+    text-indent:0;
+}
+
+.sacola{
+    background: url(../img/sacola.png) no-repeat top right;
+
+    font-size: 14px;
+    padding-right: 35px;
+    text-align: right;
+    width:140px;
+
+    padding-top:8px;
+
+    position:absolute;
+    top:0;
+    right:0;
+}
+
+.menu-opcoes{
+    position:absolute;
+    bottom:0;
+    right:0;
+}
+
+.menu-opcoes ul{
+    font-size: 15px;
+}
+
+.menu-opcoes ul li{
+    display:inline;
+    margin-left:20px;
+}
+
+.menu-opcoes a{
+    color: #003366;
+}
+
+.menu-opcoes a:hover{ /*Quando o usuário passar o mouse*/
+    color:#007dc6;
+}
+
+.menu-opcoes a:action{ /*Quando clicar no item*/
+    color:#867dc6;
+}
+
+figure{
+    background-color: #F2EDED;
+    border:1px solid #ccc;
+    text-align:center;
+
+    padding:15px;
+    margin:30px;
+}
+
+figcaption{
+    font-style:italic;
+
+    margin-top:10px;
+}
+
+#centro-distribuicao{
+    margin-left: auto;
+    margin-right: auto;
+    width:550px;
+}
+
+#familia-pelho{
+    float:right;
+    margin:0 0 10px 10px;
+}
+
+#rodape{
+    color:#777;
+    text-align: center;
+}
+
+footer{
+    clear:both;
+    position:relative;
+    background-image: url(../img/fundo-rodape.png);
+
+    padding:25px 0;
+    margin-top:30px;
+}
+
+footer .container{
+    position: relative;
+}
+
+img[alt="[Logo Mirror Fashion]"]{
+    margin-left:30px;
+    margin-top:5px;
+}
+
+.social{
+    float:right;
+    margin-top:9px;
+    margin-right:40px;
+}
+
+.social li{
+    float:left;
+    margin-left:20px;
+}
+
+
+.social a{
+    /*Tamanho do elemento = imagem*/
+    height:30px;
+    width:32px;
+    /*imagem replace*/
+    display:block;
+    /*Retirando o texto da frente*/
+    text-indent:-9999px;
+}
+
+.facebook{
+    /*Imagem com fundo*/
+    background-image: url(../img/facebook.png);
+}
+
+.twitter{
+    background-image: url(../img/twitter.png);
+}
+
+.google{
+    background-image: url(../img/googleplus.png);
+}
