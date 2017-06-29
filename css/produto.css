@@ -192,6 +192,49 @@ Podemos colocar essa regra dentro de uma media query que só vai funcionar nesse
 
 /*FIM - Código tratativa dos produtos*/
 
+
+/*INICIO - Media Query*/
+@media(min-width:630px){
+	.produto{
+		/*A foto vai se posicionar absolutamente com relação a esse elemento, por isso é preciso estar posicionado (Comentário apostila)*/
+		position:relative;
+		/*deixo 40% de espaço em branco na esquerda para a foto ocupar (Comentário apostila)*/
+		padding-left:40%;
+		/*Aumentar um pouco o tamanho das fontes usadas no produto*/
+		font-size:1.2em;
+	}
+	.cores{
+		/*Eu era relative antes; reinicio para static para evitar que a foto se posicione com relação a mim (Comentário apostila)*/
+		position:static;
+		/*reinicio meu padding-top que tinha antes e não preciso mais (Comentário apostila)*/
+		padding:0;
+	}
+	.cores legend{
+		/*Eu era absolute antes, para ter o mesmo comportamento no chrome e no firefox; agora quero voltar ao fluxo da página (Comentário apostila)*/
+		position:static;
+	}
+	.cores label img{
+		/*imagem se posiciona absolutamente à esquerda com relação ao .produto (Comentário apostila)*/
+		position:absolute;
+		top:0;
+		left:0;
+	}
+	.cores label:after{
+		/*as bolinhas coloridas tinham posição absoluta.
+		não precisamos mais, basta flutuar uma do lado da outra (Comentário apostila)*/
+		position:static;
+		float:left;
+		/*Uma pequena margem entre as bolinhas coloridas*/
+		margin-right:10px;
+	}
+	.cores label img{
+		/*Evitar que a imagem vaze para fora do espaço*/
+		max-width:35%;
+		max-height:100%;
+	}
+}
+/*FIM - Media Query*/
+
 #rodape{
     color:#777;
     text-align: center;
