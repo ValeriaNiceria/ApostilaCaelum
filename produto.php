@@ -38,10 +38,45 @@
 
        </div>
 
+       <div class="detalhes">
+            <h2>Detalhes do produto</h2>
+            <p>Esse é o melhor casaco de Cardigã que você já viu. Excelente
+            material italiano com estampa desenhada pelos artesãos da comunidade de Krotor nas ilhas gregas. Compre já e receba hoje
+            mesmo pela nossa entrega a jato.</p>
+            <!--Tabela com características do produto-->
+            <table><!--Quando queremos exibir uma série de dados tabulares, é indicado o uso da tag <table> -->
+                <thead> <!-- Serve para agrupar linhas da tabela -->
+                    <tr>
+                        <th>Característica</th> <!--A tag <th>, é útil para diferenciar seu conteúdo das células de dados -->
+                        <th>Detalhe</th> <!--Dentro do grupo <thead> devemos ter apenas linhas contendo a tag <th> como célula -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Modelo</td>
+                        <td>Cardigã 7845</td>
+                    </tr>
+                    <tr>
+                        <td>Material</td>
+                        <td>Algodão e poliester</td>
+                    </tr>
+                    <tr>
+                        <td>Cores</td>
+                        <td>Azul, Rosa e Verde</td>
+                    </tr>
+                    <tr>
+                        <td>Lavagem</td>
+                        <td>Lavar a mão</td>
+                    </tr>
+                </tbody>
+            </table>
+       </div>
+
        <!--Inicio rodapé-->
         <?php
             include("rodape.php");
         ?>
         <!--Fim rodapé-->
     </body>
+
 </html>

@@ -1,3 +1,4 @@
+
 header{
     position:relative;
 }
@@ -87,7 +88,7 @@ label[for=azul]:after{
 .cores input:checked + label:after{
 	border: 6px solid rgba(0,0,0,0.3);
 }
-/*A borda da bolinha selecionada aumenta o tamanho total da bolinha por causa do box model padrão. 
+/*A borda da bolinha selecionada aumenta o tamanho total da bolinha por causa do box model padrão.
 Uma solução é trocar o box model com a propriedade box-sizing*/
 .cores label:after{
 	-moz-box-sizing:border-box;
@@ -116,7 +117,7 @@ Uma solução é trocar o box model com a propriedade box-sizing*/
  	position:absolute;
  	top:30px;
  }
- /*As bolinhas ficaram sobrepostas na esquerda. 
+ /*As bolinhas ficaram sobrepostas na esquerda.
  Para corrigir, basta colocar uma coordenada left diferente para cada uma*/
  label[for=verde]:after{
  	left:0;
@@ -127,7 +128,7 @@ Uma solução é trocar o box model com a propriedade box-sizing*/
  label[for=azul]:after{
  	left:120px;
  }
-/*O elemento <legend> não é considerado pelo firefox como parte do fieldset e, assim, 
+/*O elemento <legend> não é considerado pelo firefox como parte do fieldset e, assim,
 o padding que colocamos fica muito grande nesse navegador.
 Uma forma de resolver esse problema é deixar o <legend> posicionado absolutamente*/
 .cores legend{
@@ -141,7 +142,7 @@ garantindo que ela nunca passe o tamanho pai com max-width*/
 	display:block;
 	max-width:100%;
 }
-/*O max-width:100% não vai funcionar no firefox. 
+/*O max-width:100% não vai funcionar no firefox.
 Neste navegador, o elemento fieldset não respeita o comportamento correto de largura de um elemento.
 Podemos colocar essa regra dentro de uma media query que só vai funcionar nesse navegador*/
 @media(min--moz-device-pixel-ratio:0){
@@ -234,6 +235,50 @@ Podemos colocar essa regra dentro de uma media query que só vai funcionar nesse
 	}
 }
 /*FIM - Media Query*/
+
+
+.detalhes{
+    padding:2em 0;
+}
+.detalhes h2{
+    font-size:1.5em;
+    line-height:2;  /*A propriedade especifica a altura da linha.*/
+}
+.detalhes p{
+    margin: 1em 0;
+    font-size:1em;
+    line-height:1.5;
+    max-width:36em;
+}
+@media(min-width:500px){
+    .detalhes{
+        font-size:1.2em;
+    }
+}
+
+/*Estilizando a tabela para deixá-la mais agradável.
+Usando o seletor de filhos múltiplos para um estilo zebrado.*/
+table{
+border-spacing:0.2em;  /*A propriedade define a distância entre as bordas das células adjacentes*/
+border-collapse:separate; /*A propriedade define se as bordas da tabela são colapsadas em uma única borda ou destacadas como no HTML padrão.*/
+}
+thead{
+    background-color:#9999;
+}
+thead th{
+    font-weight: bold; /*A propriedade define como os caracteres grossos ou finos no texto devem ser exibidos.*/
+    padding:0.3em 1em;
+    text-align:center;
+}
+td{
+    padding: 0.3em;
+}
+tr:nth-child(2n){
+    background-color:#ccc;
+}
+td:first-child{
+    font-style:italic;
+}
 
 #rodape{
     color:#777;
