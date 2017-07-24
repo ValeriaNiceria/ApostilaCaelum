@@ -1,9 +1,9 @@
         <!--Inicio cabeçalho-->
         <?php
-            $cabecalho_css='<link rel="stylesheet" href="css/produto.css">';
-            $cabecalho_title="Produto da Mirror Fashion";
-            include("cabecalho.php");
-        ?>
+$cabecalho_css = '<link rel="stylesheet" href="css/produto.css">';
+$cabecalho_title = "Produto da Mirror Fashion";
+include "cabecalho.php";
+?>
         <!--Fim cabeçalho-->
 
         <!--Inicio - Formulário de Produtos-->
@@ -11,7 +11,8 @@
             <h1>Camiseta Ecko Caveira Bad to The Bone</h1>
             <p>Por apenas R$ 48,95</p>
 
-            <form>
+            <!--Apontando o formulário para a página checkout.php com o atributo action -->
+            <form action="checkout.php" method="POST"><!--Utilizando o method 'POST', os parâmetros serão enviados mas não estarão visíveis na URL -->
                 <fieldset class="cores">
                     <legend>
                         Escolha a cor:
@@ -32,6 +33,18 @@
                         <img src="img/produtos/foto2-azul.png" alt="Produto azul">
                     </label>
                 </fieldset>
+                <!--Seletor de tamanho-->
+                <fieldset class="tamanhos">
+                    <legend>Escolha o tamanho:</legend>
+
+                    <input type="range" min="36" max="46" value="42" step="2"
+                    name="tamanho" id="tamanho">
+                </fieldset>
+                <!--HIDDEN - Usada quando apresar da informação ser importante para o programa que irá processar os dados,
+                esta não necessita ser apresentada ao usuário-->
+                <input type="hidden" name="nome" value="Camiseta Ecko Caveira Bad to The Bone">
+                <input type="hidden" name="preco" value="48.95">
+                <input type="hidden" name="id" value="2">
 
                 <input type="submit" class="comprar" value="Comprar">
             </form>
@@ -74,9 +87,8 @@
 
        <!--Inicio rodapé-->
         <?php
-            include("rodape.php");
-        ?>
+include "rodape.php";
+?>
         <!--Fim rodapé-->
     </body>
-
 </html>

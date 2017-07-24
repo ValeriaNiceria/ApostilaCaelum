@@ -2,21 +2,22 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <title><?php print $cabecalho_title; ?></title>
+        <title><?php print $cabecalho_title;?></title>
 
         <link rel="stylesheet" href="css/reset.css">
+
         <!--Cada página incluir o arquivo css própio-->
-        <?php print @$cabecalho_css; ?> <!--Utilizamos o '@' para tratar o erro, caso a variável não exista-->
+        <?php print @$cabecalho_css;?> <!--Utilizamos o '@' para tratar o erro, caso a variável não exista-->
 
         <!--Ajustar a media query para aplicar o css de adaptação a qualquer tamanho de tela menor que os 940px do desktop(ou seja, no máximo,939px)-->
         <link rel="stylesheet" href="css/mobile.css" media="(max-width:939px)">
 
         <!--Adaptação para mobile-->
-        <meta name="viewport" content="width=device-width"> 
+        <meta name="viewport" content="width=device-width">
     </head>
-        
-    <body>
-        <header class="container">
+
+    <body class="container">
+        <header>
 
             <!--Suporte HTML5 no Internet Explorer Antigo-->
                     <!--[if lt IE 9]>
