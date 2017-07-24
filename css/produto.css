@@ -1,4 +1,3 @@
-
 header{
     position:relative;
 }
@@ -233,6 +232,14 @@ Podemos colocar essa regra dentro de uma media query que só vai funcionar nesse
 		max-width:35%;
 		max-height:100%;
 	}
+            fieldset{
+                display: inline-block;
+                vertical-align: top;
+
+                margin:1em 0;
+                min-width:200px;
+                width:45%;
+            }
 }
 /*FIM - Media Query*/
 
@@ -279,6 +286,7 @@ tr:nth-child(2n){
 td:first-child{
     font-style:italic;
 }
+
 
 #rodape{
     color:#777;
