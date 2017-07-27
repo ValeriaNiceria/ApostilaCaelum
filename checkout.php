@@ -4,11 +4,37 @@
     <meta charset="UTF-8">
     <title>Checkout Mirror Fashion</title>
     <!--BOOTSTRAP - É uma forma de começar o projeto logo com um design e recursos base sem perder tempo com design no início -->
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-flatly.css"> <!--Trocando o bootstrap.css para usar o tema flatly-->
 
     <meta name="viewport" content="width=device-width">
+
+    <!--Removendo a margem da navbar-->
+    <style>
+        .navbar{
+            margin:0;
+        }
+    </style>
+
 </head>
 <body>
+    <!--Implementando um navbar-->
+    <nav class="navbar navbar-default navbar-fixed-top"> <!-- trocando a classe navbar-static-top por navbar-fixed-top. O menu fica fixo no topo mesmo com scroll -->
+        <div class="navbar-header">
+            <!---A partir do HTML5, atributos começando com (data-) em qualquer tag são considerados atributos customizados e não quebram a validade do código HTML.
+            Esses atributos são bastante úteis para passar informação para um código JavaScript -->
+            <button class="navbar-toggle" type="button" data-target=".navbar-collapse" data-toggle="collapse"><!---Criando o ícone para ativar o menu e [Usando o JavaScript do Bootstrap implicitamente]-->
+                <span class="glyphicon glyphicon-align-justify"></span><!--Trocando a palavra 'menu' pelo ícone do sanduíche-->
+            </button>
+            <a class="navbar-brand" href="index.php"><span class="glyphicon glyphicon-home"></span> Mirror Fashion</a> <!--Adicionando ícone ao menu-->
+        </div>
+        <ul class="nav navbar-nav collapse navbar-collapse"> <!--collapse e navbar-collapse: Para fazer o menu collapsar em telas pequenas-->
+            <li><a href="sobre.php"><span class="glyphicon glyphicon-question-sign"></span> Sobre</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-list-alt"></span> Ajuda</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-bullhorn"></span> Perguntas frequentes</a></li>
+            <li><a href="#">Entre em contato</a></li>
+        </ul>
+    </nav>
+
     <div class="jumbotron">
         <div class="container">
             <h1>Ótima escolha!</h1>
@@ -107,6 +133,9 @@
                 </form>
         </div>
     </div>
-
+<!--Adicionando o JavaScript do Bootstrap-->
+<!--Chamando o arquivo do Bootstrap e do jQuery-->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
 </body>
 </html>
