@@ -1723,6 +1723,10 @@ input[type="number"]::-webkit-inner-spin-button {
           transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 
+.form-control:invalid{
+  border: 1px solid #cc0000;
+}
+
 .form-control:focus {
   border-color: #66afe9;
   outline: 0;
