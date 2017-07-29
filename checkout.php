@@ -140,5 +140,7 @@
 <!--Chamando o arquivo do Bootstrap e do jQuery-->
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.js"></script>
+<!--Adicionado arquivo JS formatação de número-->
+<script src="js/converteMoeda.js"></script>
 </body>
 </html>
