@@ -2,10 +2,10 @@
 
    <!--Inicio cabeçalho-->
     <?php
-        $cabecalho_css='<link rel="stylesheet" href="css/estilo.css">';
-        $cabecalho_title="Mirror Fashion";
-        include("cabecalho.php");
-    ?>
+$cabecalho_css = '<link rel="stylesheet" href="css/estilo.css">';
+$cabecalho_title = "Mirror Fashion";
+include "cabecalho.php";
+?>
    <!--Fim cabeçalho-->
 
 
@@ -177,8 +177,8 @@
 
    <!--Inicio rodapé-->
    <?php
-        include("rodape.php");
-   ?>
+include "rodape.php";
+?>
    <!--Fim rodapé-->
 
 </body>

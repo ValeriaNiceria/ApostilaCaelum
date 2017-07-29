@@ -13,6 +13,9 @@
         .navbar{
             margin:0;
         }
+        body{
+            padding-top: 70px;
+        }
     </style>
 
 </head>
