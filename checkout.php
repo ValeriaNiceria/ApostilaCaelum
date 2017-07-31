@@ -142,5 +142,6 @@
 <script src="js/bootstrap.js"></script>
 <!--Adicionado arquivo JS formatação de número-->
 <script src="js/converteMoeda.js"></script>
+<script src="js/testaConversao.js"></script>
 </body>
 </html>

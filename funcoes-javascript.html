@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Funções JavaScript</title>
+    <style>
+        body{
+            font-family:sans-serif;
+        }
+        h1{
+            color:#2D9EA1;
+        }
+        h2{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Funcões JavaScript</h1>
+    <script>
+        function exibeMensagem(){
+            alert("Atenção!");
+        }
+        //Chamando a função declarada duas vezes!
+        exibeMensagem();
+        exibeMensagem();
+    </script>
+
+    <h2>Função com parâmetro</h2>
+    <p>Uma função pode receber um ou mais parâmetro</p>
+    <script>
+        function exibeMensagem(mensagem){
+            document.write(mensagem);
+        }
+        exibeMensagem("JavaScript!");
+
+        //A função abaixo exibe a soma de dois números passados como parâmetro:
+        function somaDoisNumeros(num1,num2){
+            document.write(num1 + num2);
+        }
+        somaDoisNumeros(5,10);
+    </script>
+
+    <h2>Função com retorno</h2>
+    <script>
+        function somaDoisNumeros(num1,num2){
+            return num1 + num2;
+        }
+        var numero = 90;
+        var resultado = somaDoisNumeros(10,20);
+        document.write(numero - resultado);
+    </script>
+
+    <h2>Function Expression</h2>
+    <p>Podemos declarar funções como conteúdo de variáveis, numa forma chamada function expression:</p>
+    <script>
+        var somaDoisNumeros = function(num1,num2){
+            return num1 + num2;
+        }
+        document.write(somaDoisNumeros(10,20));
+    </script>
+</body>
+</html>
