@@ -44,6 +44,8 @@ include "cabecalho.php";
                 </section><!--FIM . MENU-DEPARTAMENTO-->
 
                 <img src="img/destaque-home.png" alt="[Promoção: Big City Night]">
+                <!--link para controlar à animação-->
+                <a href="#" class="pause"></a>
             </div><!--FIM .CONTAINER . DESTAQUE-->
 
     </section>
@@ -180,6 +182,8 @@ include "cabecalho.php";
 include "rodape.php";
 ?>
    <!--Fim rodapé-->
+
+    <script src="js/banner.js"></script>
 
 </body>
 </html>

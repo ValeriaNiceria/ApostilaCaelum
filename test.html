@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teste - JavaScript</title>
+    <style>
+        body{
+            font-family:sans-serif;
+        }
+        h1{
+            color:#63bacc;
+        }
+        p{
+            color:blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bloco de repetição</h1>
+    <p>FOR</p>
+    <script>
+        var palavras = ["Caelum","Ensino","Inovação"];
+        for(var i=0;i<palavras.length;i++){
+            document.write(palavras[i] + "-");
+        }
+    </script>
+    <p>While</p>
+    <script>
+        var contador = 1;
+        while(contador <= 10){
+            document.write(contador + " Mississípi... <br/>");
+            contador++;
+        }
+        document.write("Valor do contador: "+contador);
+    </script>
+</body>
+</html>
