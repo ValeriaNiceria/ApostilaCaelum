@@ -106,16 +106,16 @@ Uma solução é trocar o box model com a propriedade box-sizing*/
 	position:absolute;
 }
 /*As bolinhas vão ser posicionadas em relação o fieldset cores, então ele precisa estar posicionado.
- O padding superior é para abrir espaço para as bolinhas*/
- .cores{
- 	position:relative;
- 	padding-top:90px;
- }
- /*Cada bolinha é um label:after, basta posicioná-las absolutamente*/
- .cores label:after{
- 	position:absolute;
- 	top:30px;
- }
+O padding superior é para abrir espaço para as bolinhas*/
+.cores{
+  position:relative;
+  padding-top:90px;
+}
+/*Cada bolinha é um label:after, basta posicioná-las absolutamente*/
+.cores label:after{
+  position:absolute;
+  top:30px;
+}
  /*As bolinhas ficaram sobrepostas na esquerda.
  Para corrigir, basta colocar uma coordenada left diferente para cada uma*/
  label[for=verde]:after{
@@ -188,9 +188,21 @@ Podemos colocar essa regra dentro de uma media query que só vai funcionar nesse
 	padding:0.5em 1em;
 	margin:1em 0;
 }
-
-
 /*FIM - Código tratativa dos produtos*/
+
+/*Estilizando o output para ter um design mais ajustado*/
+.tamanhos output{
+    display:inline-block;
+    height:44px;
+    width:44px;
+
+    line-height:44px;
+    text-align:center;
+
+    border:3px solid #666;
+    border-radius:50%;
+    color:#555;
+}
 
 
 /*INICIO - Media Query*/
@@ -232,14 +244,14 @@ Podemos colocar essa regra dentro de uma media query que só vai funcionar nesse
 		max-width:35%;
 		max-height:100%;
 	}
-            fieldset{
-                display: inline-block;
-                vertical-align: top;
+    fieldset{
+        display: inline-block;
+        vertical-align: top;
 
-                margin:1em 0;
-                min-width:200px;
-                width:45%;
-            }
+        margin:1em 0;
+        min-width:200px;
+        width:45%;
+    }
 }
 /*FIM - Media Query*/
 
@@ -266,8 +278,8 @@ Podemos colocar essa regra dentro de uma media query que só vai funcionar nesse
 /*Estilizando a tabela para deixá-la mais agradável.
 Usando o seletor de filhos múltiplos para um estilo zebrado.*/
 table{
-border-spacing:0.2em;  /*A propriedade define a distância entre as bordas das células adjacentes*/
-border-collapse:separate; /*A propriedade define se as bordas da tabela são colapsadas em uma única borda ou destacadas como no HTML padrão.*/
+    border-spacing:0.2em;  /*A propriedade define a distância entre as bordas das células adjacentes*/
+    border-collapse:separate; /*A propriedade define se as bordas da tabela são colapsadas em uma única borda ou destacadas como no HTML padrão.*/
 }
 thead{
     background-color:#9999;
