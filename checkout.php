@@ -84,76 +84,78 @@
                     </div>
                 </div>
             </div>
-                <form class="col-sm-8">
-                    <div class="row">
-                        <fieldset class="col-md-6">
-                            <legend>Dados pessoais</legend>
+            <form class="col-sm-8">
+                <div class="row">
+                    <fieldset class="col-md-6">
+                        <legend>Dados pessoais</legend>
 
-                            <div class="form-group">
-                                <label for="nome">Nome completo</label>
-                                <input type="text" class="form-control" id="nome" name="nome" autofocus required>
+                        <div class="form-group">
+                            <label for="nome">Nome completo</label>
+                            <input type="text" class="form-control" id="nome" name="nome" autofocus required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">@</span> <!--Validando o campo email - apenas usando o input type correto-->
+                                <input type="email" class="form-control" id="email" name="email" placeholder="email@exemplo.com">
                             </div>
+                        </div>
 
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon">@</span> <!--Validando o campo email - apenas usando o input type correto-->
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="email@exemplo.com">
-                                </div>
-                            </div>
+                        <div class="form-group">
+                            <label for="cpf">CPF</label>
+                            <input type="text" class="form-control" id="cpf" name="cpf" placeholder="000.000.000-00" data-mask="999.999.999-99" required>
+                        </div>
 
-                            <div class="form-group">
-                                <label for="cpf">CPF</label>
-                                <input type="text" class="form-control" id="cpf" name="cpf" placeholder="000.000.000-00" required>
-                            </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="sim" name="spam" checked>
+                                Quero receber spam da Mirror Fashion
+                            </label>
+                        </div>
+                    </fieldset>
 
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" value="sim" name="spam" checked>
-                                    Quero receber spam da Mirror Fashion
-                                </label>
-                            </div>
-                        </fieldset>
+                    <fieldset class="col-md-6">
+                        <legend>Cartão de crédito</legend>
 
-                        <fieldset class="col-md-6">
-                            <legend>Cartão de crédito</legend>
+                        <div class="form-group">
+                            <label for="numero-cartao">Número - CVV</label>
+                            <input type="text" class="form-control" id="numero-cartao" name="numero-cartao" data-mask="9999 9999 9999 9999 - 999">
+                        </div>
 
-                            <div class="form-group">
-                                <label for="numero-cartao">Número - CVV</label>
-                                <input type="text" class="form-control" id="numero-cartao" name="numero-cartao">
-                            </div>
+                        <div class="form-group">
+                            <label for="bandeira-cartao">Bandeira</label>
+                            <select name="bandeira-cartao" id="bandeira-cartao" class="form-control">
+                                <option value="master">MasterCard</option>
+                                <option value="visa">VISA</option>
+                                <option value="amex">American Express</option>
+                            </select>
+                        </div>
 
-                            <div class="form-group">
-                                <label for="bandeira-cartao">Bandeira</label>
-                                <select name="bandeira-cartao" id="bandeira-cartao" class="form-control">
-                                    <option value="master">MasterCard</option>
-                                    <option value="visa">VISA</option>
-                                    <option value="amex">American Express</option>
-                                </select>
-                            </div>
+                        <div class="form-group">
+                            <label for="validade-cartao">Validade</label>
+                            <input type="month" class="form-control" id="validade-cartao" name="validade-cartao">
+                        </div>
+                    </fieldset>
+                </div>
 
-                            <div class="form-group">
-                                <label for="validade-cartao">Validade</label>
-                                <input type="month" class="form-control" id="validade-cartao" name="validade-cartao">
-                            </div>
-                        </fieldset>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary pull-right btn-lg">
-                        <span class="glyphicon glyphicon-thumbs-up"></span> <!--Adicionar ícone do BOOTSTRAP-->
-                        Confirmar Pedido
-                    </button>
-                </form>
+                <button type="submit" class="btn btn-primary pull-right btn-lg">
+                    <span class="glyphicon glyphicon-thumbs-up"></span> <!--Adicionar ícone do BOOTSTRAP-->
+                    Confirmar Pedido
+                </button>
+            </form>
         </div>
     </div>
-<!--Adicionando o JavaScript do Bootstrap-->
-<!--Chamando o arquivo do Bootstrap e do jQuery-->
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.js"></script>
-<!--Adicionado arquivo JS formatação de número-->
-<script src="js/converteMoeda.js"></script>
-<script src="js/testaConversao.js"></script>
-<!--Adicionando arquivo JS para exibir o total da compra-->
-<script src="js/total.js"></script>
+    <!--Adicionando o JavaScript do Bootstrap-->
+    <!--Chamando o arquivo do Bootstrap e do jQuery-->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <!--Usando plugin JS-->
+    <script src="js/inputmask-plugin.js"></script><!--Cada campo que for usar uma máscara numérica precisa definir o atributo 'data-mask' com o formato a ser usado-->
+    <!--Adicionado arquivo JS formatação de número-->
+    <script src="js/converteMoeda.js"></script>
+    <script src="js/testaConversao.js"></script>
+    <!--Adicionando arquivo JS para exibir o total da compra-->
+    <script src="js/total.js"></script>
 </body>
 </html>
