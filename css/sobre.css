@@ -99,6 +99,12 @@ h1 + p{ /*Utilizando o seletor de irmão adjacente - Remover apenas a identaçã
     color:#867dc6;
 }
 
+.video{
+    position:relative;
+    float:right;
+    margin:10px;
+}
+
 figure{
     background-color: #F2EDED;
     border:1px solid #ccc;
