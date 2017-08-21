@@ -1,7 +1,7 @@
 
 <!--Inicio cabeçalho-->
 <?php
-$cabecalho_css = '<link rel="stylesheet" href="css/estilo.css">';
+$cabecalho_css = '<link rel="stylesheet/less" href="less/estilo.less">';//LESS
 $cabecalho_title = "Mirror Fashion";
 include "cabecalho.php";
 ?>
@@ -189,6 +189,9 @@ include "rodape.php";
 
 <script src="js/jquery.js"></script>
 <script src="js/home.js"></script>
+
+<!--carrega o pré-processador LESS-->
+<script src="js/less.js" type="text/javascript"></script>
 
 </body>
 </html>

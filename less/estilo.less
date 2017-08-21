@@ -1,0 +1,377 @@
+@escuro:#333;
+
+.transicao(@propriedades, @tempo){/*Mixin - LESS*/
+    -webkit-transition: @propriedades @tempo;
+    -moz-transition: @propriedades @tempo;
+    -ms-transition: @propriedades @tempo;
+    -o-transition: @propriedades @tempo;
+    transition: @propriedades @tempo;
+}
+
+.gradiente(@cor1,@cor2){/*Mixin - LESS*/
+    background:@cor1;/*Navegadores Antigos*/
+    background: -moz-linear-gradient(top,@cor1 0%,@cor2 100%);/*FF3.6+*/
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,@cor1),color-stop(100%,@cor2));/*Chrome, Safari4+*/
+    background: -webkit-linear-gradient(top,@cor1 0%,@cor2 100%);/*Chrome10+,Safari5.1+*/
+    background: -o-linear-gradient(top,@cor1 0%,@cor2 100%);/*Opera 11.10+*/
+    background: -ms-linear-gradient(top,@cor1 0%,@cor2 100%);/*IE10+*/
+    background: linear-gradient(to bottom,@cor1 0%,@cor2 100%);/*W3C*/
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@cor1',endColorstr='@cor2',GradientType=0);/*IE6-9*/
+}
+
+.gradiente-automatico(@cor1){ /*Mixin - LESS*/
+    .gradiente(@cor1, darken(@cor1,20%));
+}
+
+header{
+    position:relative;
+}
+
+.sacola{
+    background: url(../img/sacola.png) no-repeat top right;
+    font-size:14px;
+    padding-right:35px;
+    padding-top:8px;
+    text-align:right;
+    width:140px;
+    position:absolute;
+    top: 0;
+    right: 0;
+}
+
+.container{
+    margin:0 auto;
+    width:940px;
+}
+
+.destaque{
+    margin-top: 20px;
+}
+
+/*Estilizando o botão pause e play*/
+.destaque{
+    position: relative;
+}
+.pause,
+.play{
+    display:block;
+    position: absolute;
+    right:15px;
+    top:15px;
+}
+.pause{
+    border-left:10px solid #900;
+    border-right:10px solid #900;
+    height:30px;
+    width:5px;
+}
+.play{
+    border-left:25px solid #900;
+    border-bottom:15px solid transparent;
+    border-top:15px solid transparent;
+}
+
+
+.busca input{
+    vertical-align:middle;
+}
+
+.busca input[type=search]{
+    width:170px;
+}
+
+.busca,
+.menu-departamento{
+    background-color: #dcdcdc;
+    font-weight:bold;
+    text-transform:uppercase;
+
+    margin-right:10px;
+    width:230px;
+
+    float:left;
+}
+
+.busca h2,
+.busca form,
+.menu-departamento h2{
+    margin:10px;
+}
+
+.menu-departamento{
+    clear:left;
+    text-transform:uppercase;
+
+    margin-top: 10px;
+    padding-bottom:10px;
+    li{
+        background-color:white;
+        margin-bottom:1px;
+        padding:5px 10px;
+        ul{ /*Sublista esteja escondida*/
+            display:none; /*retira o elemento do layout da página*/
+        }
+        &:hover ul{ /*Quando o usuário passar o mouse*/
+            display:block; /*Faz com que o elemento html seja rederizado como um bloco*/
+        }
+    }
+    a{
+        color: @escuro;
+        text-decoration:none;
+    }
+
+    ul ul li{
+        background-color:#dcdcdc;
+    }
+
+    li li a:before{ /*Enjetar um conteúdo novo via propriedade content no CSS*/
+        content: '- '; /*Serve para indicar qual conteúdo dinamico que será  inserido*/
+    }
+    
+    /*
+    [A propriedade content tem muitas variações.
+     Uma variação simples, mas útil, é usar caracteres unicode para injetar símbolos mais interessantes.]
+    
+    .menu-departamento li li a:before{
+        content: '\272A';
+        padding-right: 3px;
+    }
+    
+    .painel h2: before{
+        content: '\2756';
+        padding-right: 5px;
+        opacity: 0.4;
+    }
+    
+    */
+}
+
+
+.menu-opcoes{
+    position:absolute;
+    bottom:0;
+    right:0;
+    ul{
+        font-size:15px;
+        li{
+            display: inline;
+            margin-left:20px;
+        }
+    }
+    a{
+        color:#036;
+        &:hover{ /*Quando o usuário passar o mouse*/
+            color:#007dc6;
+        }
+        &:action{ /*Quando clicar no item*/
+            color:#867dc6;
+        }
+    }
+}
+
+body{
+    font-family: 'PT Sans',sans-serif;
+    color: @escuro;
+}
+
+
+.painel{
+    margin:10px 0;
+    width:450px;
+
+    border-radius:4px; /* Permite definir as bordas arredondadas*/
+    box-shadow:1px 1px 4px  #999; /*Coloca sombra no elemento*/
+
+    box-shadow:inset 1px 1px 4px #999; /*Adiciona sombra interna com elemento com o (inset)*/
+
+    button{
+        color:white;
+        position:relative;
+        margin-bottom:10px;
+    }
+    
+    /*Escondendo o botão por padrão.
+    Ele só vai ser exibido quando os produtos adicionais estiverem colapsados*/
+    button{
+        display: none;
+    }
+
+    /*Estilizando o botão de mostrar mais produtos*/
+    button{
+        /*posicionamento*/
+        float:right;
+        margin-right:10px;
+        padding:10px;
+        /*estilo*/
+        background-color:@escuro;
+        border:0;
+        border-radius:4px;
+        box-shadow:1px 1px 3px rgba(30,30,30,0.5);
+        color:white;
+        font-size:1em;
+        text-decoration:none;
+        text-shadow:1px 0 1px black;
+        /*animação*/
+        .transicao(all, 0.3s);
+        &:hover{
+            background-color:#393939;
+            box-shadow:1px 0 20px rgba(200,200,120,0.9);
+        }
+        &:after{
+            /*elemento vazio*/
+            content:'';
+            display:block;
+            height:0;
+            width:0;
+        
+            /*triangulo*/
+            border-top:10px solid @escuro;
+            border-left:10px solid transparent;
+            border-right:10px solid transparent;
+        
+            /*posicionamento*/
+            position:absolute;
+            top:100%;
+            left:50%;
+            margin-left:-5px;
+        
+            /*animação*/
+            .transicao(all, 0.3s);
+        }
+        &:hover:after{
+            border-top-color:#393939;
+        }
+    }
+
+    ol{
+        margin-left:-35px;
+    }
+
+    li{
+        display:inline-block;
+        vertical-align: top;
+        width:140px;
+        margin:2px;
+        padding-bottom:10px;
+    
+        .transicao(all, 0.7s ease-in); /*Animação na volta do elemento para o estado normal*/
+    
+
+        /*Quando o usuário passar  o mouse em algum produto dos painéis de destaque, mostre uma sombra por trás com box-shadow.*/
+        &:hover{
+        background-color: rgba(255,255,255,0.8);
+        box-shadow:0 0 5px @escuro;
+        .transicao(all, box-shadow 0.7s);
+        /*Quando passar o mouse em cima do elemento, aumentar o elemento em 20%, dando uma espécie de zoom*/
+        transform:scale(1.2) rotate(-5deg);
+        }
+
+        /*Faz os elementos ímpares girarem em sentido anti-horário e os pares no sentido horário*/
+        &:nth-child(2n):hover{
+            transform:scale(1.2) rotate(5deg);
+        }
+    }
+    h2{
+        font-family: 'Bad Script', sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        text-transform: uppercase;
+    
+        margin-bottom:10px;
+    
+        text-shadow:3px 3px 2px rgba(255,255,255,0.1); /*Adiciona sombra ao texto com o canal alfa (rgba)*/
+
+        &:before{ /*Adiciona o conteúdo visual*/
+            content: '\2756';
+            padding-right: 5px;
+            opacity: 0.4;
+        }
+    }
+    a{
+        color:@escuro;
+        font-size:13px;
+        text-align:center;
+        text-decoration:none;
+    }
+
+    figcaption{
+        width:120px;
+    }    
+}
+
+/*Esconder os produtos a mais, e exibir o botão que vai fazer a funcionalidade*/
+.painel-compacto{
+    li:nth-child(n+7){
+        display:none;
+    }
+    button{
+        display:block;
+    }
+}
+
+.novidades{
+    .gradiente-automatico(#f5dcdc);
+    float:left;
+}
+
+.mais-vendidos{
+    .gradiente(#dcdcf5, #f4bebe);
+    float:right;
+}
+
+#rodape{
+    color:#777;
+    text-align: center;
+}
+
+footer{
+    clear:both;
+    position:relative;
+    background-image: url(../img/fundo-rodape.png);
+
+    padding:25px 0;
+}
+
+footer .container{
+    position: relative;
+}
+
+img[alt="[Logo Mirror Fashion]"]{
+    margin-left:30px;
+    margin-top:5px;
+}
+
+.social{
+    float:right;
+    margin-top:9px;
+    margin-right:40px;
+
+    li{
+        float:left;
+        margin-left:20px;
+    }
+
+    a{
+        /*Tamanho do elemento = imagem*/
+        height:30px;
+        width:32px;
+        /*imagem replace*/
+        display:block;
+        /*Retirando o texto da frente*/
+        text-indent:-9999px;
+    }
+    
+}
+
+.facebook{
+    /*Imagem com fundo*/
+    background-image: url(../img/facebook.png);
+}
+
+.twitter{
+    background-image: url(../img/twitter.png);
+}
+
+.google{
+    background-image: url(../img/googleplus.png);
+}
