@@ -9,7 +9,7 @@
         <!--Inicio cabeçalho-->
         <?php
             $cabecalho_css = '<link rel="stylesheet" href="css/produto.css">';
-            $cabecalho_title = "[Mirror Fashion] $nome";
+            $cabecalho_title = "$nome - Mirror Fashion";
             include "cabecalho.php";
         ?>
         <!--Fim cabeçalho-->

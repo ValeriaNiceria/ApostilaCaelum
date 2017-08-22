@@ -57,60 +57,23 @@ include "cabecalho.php";
         <section class="painel novidades">
             <h2>Novidades</h2>
             <ol>
+                <!--Conecta ao banco de dados e faz a busca dos produtos no banco de dados e percorra essa lista com um laço while-->
+                <?php
+                    $conexao = mysqli_connect("127.0.0.1", "root", "", "wd43");
+                    $dados = mysqli_query($conexao,"SELECT * FROM produtos ORDER BY data LIMIT 0,12");
+
+                    while($produtos = mysqli_fetch_array($dados)):  
+                ?>
                 <!-- produto-->
                 <li>
-                    <a href="produto.html">
+                    <a href="produto.php?id=<?= $produtos['id']?>">
                         <figure>
-                            <img src="img/produtos/miniatura1.png" alt="[Cardigan]">
-                            <figcaption>Cardigan por R$ 129,90</figcaption>
+                            <img src="img/produtos/miniatura<?= $produtos['id']?>.png" alt="<?= $produtos['nome']?>">
+                            <figcaption><?= $produtos['nome']?> por <?= $produtos['preco']?></figcaption>
                         </figure>
                     </a>
                 </li>
-
-                <li>
-                    <a href="produto.html">
-                        <figure>
-                            <img src="img/produtos/miniatura2.png" alt="[Camisa]">
-                            <figcaption>Camisa por R$ 29,90</figcaption>
-                        </figure>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="produto.html">
-                        <figure>
-                            <img src="img/produtos/miniatura3.png" alt="[Cardigan]">
-                            <figcaption>Cardigan por R$ 49,90</figcaption>
-                        </figure>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="produto.html">
-                        <figure>
-                            <img src="img/produtos/miniatura4.png" alt="[Jaqueta]">
-                            <figcaption>Jaqueta por R$ 89,90</figcaption>
-                        </figure>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="produto">
-                        <figure>
-                            <img src="img/produtos/miniatura5.png" alt="[Regata]">
-                            <figcaption>Regata por R$19,90</figcaption>
-                        </figure>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="produto.html">
-                        <figure>
-                            <img src="img/produtos/miniatura6.png" alt="[Blusa]">
-                            <figcaption>Blusa por R$29,90</figcaption>
-                        </figure>
-                    </a>
-                </li>
+                <?php endwhile;?>
             </ol>
             <!--Criar o botão responsável por exibir os produtos-->
             <button type="button">Mostra mais</button>
@@ -119,59 +82,19 @@ include "cabecalho.php";
         <section class="painel mais-vendidos">
             <h2>Mais Vendidos</h2>
             <ol>
+            <?php
+                $dado = mysqli_query($conexao,"SELECT * FROM produtos ORDER BY vendas LIMIT 0,12");
+                while($produto = mysqli_fetch_array($dado)):
+            ?>
                 <li>
-                    <a href="produto.html">
+                    <a href="produto.php?id=<?= $produto['id']?>">
                         <figure>
-                            <img src="img/produtos/miniatura15.png" alt="[Vestido]">
-                            <figcaption>Vestido por R$49,90</figcaption>
+                            <img src="img/produtos/miniatura<?= $produto['id']?>.png" alt="<?= $produto['nome']?>">
+                            <figcaption><?= $produto['nome']?> por <?= $produto['preco']?></figcaption>
                         </figure>
                     </a>
                 </li>
-
-                <li>
-                    <a href="produto.html">
-                        <figure>
-                            <img src="img/produtos/miniatura1.png" alt="[Cardigan]">
-                            <figcaption>Cardigan por R$129,90</figcaption>
-                        </figure>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="produto.html">
-                        <figure>
-                            <img src="img/produtos/miniatura11.png" alt="[Short]">
-                            <figcaption>Short por R$39,90</figcaption>
-                        </figure>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="produto.html">
-                        <figure>
-                            <img src="img/produtos/miniatura9.png" alt="[Camisa Xadrez]">
-                            <figcaption>Camisa Xadrez por R$59,90</figcaption>
-                        </figure>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="produto.html">
-                        <figure>
-                            <img src="img/produtos/miniatura7.png" alt="[Blusa LIsa]">
-                            <figcaption>Blusa Lisa por R$ 39,90</figcaption>
-                        </figure>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="produto.html">
-                        <figure>
-                            <img src="img/produtos/miniatura14.png" alt="Blusa">
-                            <figcaption>Blusa por R$59,90</figcaption>
-                        </figure>
-                    </a>
-                </li>
+                <?php endwhile;?>
             </ol>
             <!--Criar o botão responsável por exibir os produtos-->
             <button type="button">Mostra mais</button>
